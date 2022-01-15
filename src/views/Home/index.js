@@ -13,9 +13,10 @@ function Home() {
     const [tasks, setTasks] = useState([]);
 
     async function loadTasks() {
-        await api.get(`/task/filter/${filterActived}/11.11.11.11.11.11`)
+        await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
             .then(response => {
                 setTasks(response.data);
+                console.log(response.data)
             })
     }
 
@@ -53,11 +54,11 @@ function Home() {
             </S.Title>
 
             <S.Content>
-            {
-                tasks.map(t => (
-                <TaskCard type={t.type} title={t.title} when={t.when} />
-                ))
-            }
+                {
+                    tasks.map(t => (
+                        <TaskCard type={t.type} title={t.title} when={t.when} />
+                    ))
+                }
             </S.Content>
 
             <Footer />
