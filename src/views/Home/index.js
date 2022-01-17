@@ -29,7 +29,7 @@ function Home() {
             })
     }
 
-    function Notification(){
+    function Notification() {
         setFilterActived('late');
     }
 
@@ -41,7 +41,7 @@ function Home() {
 
     return (
         <S.Container>
-            <Header lateCount={lateCount} clickNotification={Notification}/>
+            <Header lateCount={lateCount} clickNotification={Notification} />
 
             <S.FilterArea>
                 <button type="button" onClick={() => setFilterActived("all")}>
@@ -72,7 +72,7 @@ function Home() {
                 {
                     tasks.map(t => (
                         <Link to={`/task/${t._id}`}>
-                        <TaskCard type={t.type} title={t.title} when={t.when} />
+                            <TaskCard type={t.type} title={t.title} when={t.when} done={t.done} />
                         </Link>
                     ))
                 }
