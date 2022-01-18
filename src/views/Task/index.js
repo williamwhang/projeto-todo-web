@@ -4,6 +4,7 @@ import * as S from './styles';
 import { format } from 'date-fns';
 
 import api from '../../services/api';
+import isConnected from '../../utils/isConnected';
 
 //NOSSOS COMPONENTES
 import Header from '../../components/Header';
@@ -12,6 +13,7 @@ import TypeIcons from '../../utils/typeIcons';
 
 import iconCalendar from '../../assets/calendar.png';
 import iconClock from '../../assets/clock.png';
+import is from 'date-fns/esm/locale/is/index.js';
 
 function Task({ match }) {
     const [redirect, setRedirect] = useState(false);
@@ -84,8 +86,11 @@ function Task({ match }) {
     }
 
     useEffect(() => {
+        is(!isConnected)
+        setRedirect(true);
+
         LoadTaskDetails();
-    }, [])
+    }, [LoadTaskDetails])
 
     return (
         <S.Container>
