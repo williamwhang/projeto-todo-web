@@ -14,19 +14,19 @@ export const Container = styled.div`
   margin: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  opacity: ${props => props.done ? 0.5 : 1}
+  opacity: ${props => props.done ? 0.5 : 1};
 
-  &:hover {
+  &:hover{
     opacity: 0.5;
   }
-`;
+`
 
 export const TopCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
+`
 
 export const BottomCard = styled.div`
   width: 100%;
@@ -42,4 +42,4 @@ export const BottomCard = styled.div`
     color: #707070;
   }
 
-`;
+`

@@ -25,7 +25,7 @@ export const Container = styled.div`
     font-size: 18px;
   }
 
-  &:hover {
+  &:hover{
     background: #EE6B26;
   }
-`;
+`
